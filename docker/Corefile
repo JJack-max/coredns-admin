@@ -1,0 +1,11 @@
+# CoreDNS 配置，与 coredns-admin 共用 etcd path_prefix /coredns
+.:53 {
+    etcd {
+        path /coredns
+        endpoint http://etcd:2379
+        fallthrough
+    }
+    forward . 8.8.8.8:53 8.8.4.4:53
+    cache 30
+    log
+}

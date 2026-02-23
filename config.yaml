@@ -1,0 +1,10 @@
+#host: ""
+#user_etcd_path: /user/coredns
+port: 8088
+etcd:
+  endpoint: [http://172.29.164.200:2379]
+  path_prefix: /coredns
+  timeout: 5
+  #username: ""
+  #password: ""
+  #tls: [cert,key,ca]

@@ -1,0 +1,61 @@
+$--color-primary: #409eff !default;
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 44%, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $--color-primary;
+    border-radius: 10px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.el-alert--custom.is-light {
+    border: 1px solid #abdcff;
+    background-color: #f0faff;
+    color: #17233d;
+
+    .el-alert__title {
+        font-size: 14px;
+    }
+    .el-alert__description {
+        color: #515a6e;
+        font: 13px monospace;
+        p {
+            white-space: pre;
+            margin: auto;
+        }
+    }
+}
+
+.input_is_error {
+    input,
+    input:hover,
+    input:focus {
+        border-color: red;
+    }
+}

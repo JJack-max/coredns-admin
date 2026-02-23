@@ -1,0 +1,9 @@
+views/node_modules
+views/dist
+.git
+*.md
+.gitignore
+.env*
+*.test.go
+.vscode
+terminals

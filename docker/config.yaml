@@ -1,0 +1,6 @@
+# Docker Compose 内使用的配置，etcd 地址为 compose 服务名
+port: 8088
+etcd:
+  endpoint: [http://etcd:2379]
+  path_prefix: /coredns
+  timeout: 5
