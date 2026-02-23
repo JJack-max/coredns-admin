@@ -11,8 +11,6 @@ services:
       ETCD_LISTEN_CLIENT_URLS: "http://0.0.0.0:2379"
       ETCD_ADVERTISE_CLIENT_URLS: "http://etcd:2379"
       ETCD_DATA_DIR: /etcd-data
-    ports:
-      - "2379:2379"
     volumes:
       - etcd_data:/etcd-data
     restart: unless-stopped
@@ -28,7 +26,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-        networks:
 
     networks:
       my-net:
@@ -52,8 +49,6 @@ services:
     build: .
     image: coredns-admin:latest
     container_name: coredns-admin
-    ports:
-      - "8088:8088"
     depends_on:
       etcd:
         condition: service_healthy
