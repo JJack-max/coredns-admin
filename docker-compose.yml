@@ -28,6 +28,10 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+        networks:
+
+    my-net:
+      ipv4_address: 172.30.0.7
 
   coredns:
     image: coredns/coredns:1.12.2
@@ -39,6 +43,8 @@ services:
       etcd:
         condition: service_healthy
     restart: unless-stopped
+    my-net:
+      ipv4_address: 172.30.0.8
 
   coredns-admin:
     build: .
@@ -59,6 +65,12 @@ services:
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123456}
     command: ["./coredns-admin", "-C", "/app/config.yaml"]
     restart: unless-stopped
+    my-net:
+      ipv4_address: 172.30.0.9
 
 volumes:
   etcd_data:
+
+networks:
+  my-net:
+    external: true
